@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Visuals</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <nav class="custom-navbar">
+    <ul class="nav-links">
+      <li><a href="">Summary</a></li>
+      <li><a href="">Payment</a></li>
+      <li><a href="">Operation</a></li>
+      <li><a href="">Financial</a></li>
+      <li><a href="">IRS</a></li>
+    </ul>
+  </nav>
+
+  <div class="main-container">
+
+    <div class="col1">
+      <div class="chart-container">
+        <h2>Installation Requests</h2>
+        <canvas id="installationChart"></canvas>
+      </div>
+
+      <div class="chart-container">
+        <h2>Removal Pending</h2>
+        <canvas id="removalPendingChart"></canvas>
+      </div>
+
+      <div class="chart-container">
+        <h2>Total Outbound Calls</h2>
+        <canvas id="totalOutboundChart"></canvas>
+      </div>
+
+      <div class="chart-container">
+        <h2>IOS Users</h2>
+        <canvas id="IOSChart"></canvas>
+      </div>
+
+    </div>
+
+<div class="col2">
+<div class="chart-container">
+      <h2>Security Briefings Pending</h2>
+      <canvas id="securityBreifingsChart"></canvas>
+    </div>
+
+    <div class="chart-container">
+      <h2>Redo Completed</h2>
+      <canvas id="redoCompletedChart"></canvas>
+    </div>
+
+    
+      <div class="chart-container">
+        <h2>Total Inbound Calls</h2>
+        <canvas id="totalInboundChart"></canvas>
+      </div>
+
+    <div class="chart-container">
+      <h2>Android Users</h2>
+      <canvas id="androidChart"></canvas>
+    </div>
+  </div>
+
+  
+<div class="col3">
+<div class="chart-container">
+      <h2>Removal Completed</h2>
+      <canvas id="removalCompleteChart"></canvas>
+    </div>
+
+    <div class="chart-container">
+      <h2>NR Today</h2>
+      <canvas id="NRChart"></canvas>
+    </div>
+
+    
+      <div class="chart-container">
+        <h2>Automatic Outbound Calls</h2>
+        <canvas id="automaticOutboundChart"></canvas>
+      </div>
+
+    <div class="chart-container">
+      <h2>Self Security Briefing SMS Sent</h2>
+      <canvas id="securityChart"></canvas>
+    </div>
+  </div>
+
+  
+<div class="col4">
+<div class="chart-container">
+      <h2>Removal Intimation</h2>
+      <canvas id="removalIntimationChart"></canvas>
+    </div>
+
+    <div class="chart-container">
+      <h2>Redo Pending</h2>
+      <canvas id="redoPendingChart"></canvas>
+    </div>
+
+    
+      <div class="chart-container">
+        <h2>Mobile Application Calls</h2>
+        <canvas id="mobileAppChart"></canvas>
+      </div>
+
+    <div class="chart-container">
+      <h2>Self Security Briefing Done</h2>
+      <canvas id="briefingDoneChart"></canvas>
+    </div>
+  </div>
+</div>
+
+  <script src="data.js"></script>
+</body>
+
+</html>

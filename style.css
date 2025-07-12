@@ -1,0 +1,107 @@
+/* Global Styles */
+:root {
+  --navbar-dark-bg: #1e2a38;
+  --nav-link-text: #ffffff;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #101820;
+  color: #ffffff;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* Navbar */
+.custom-navbar {
+  background-color: var(--navbar-dark-bg);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  position: sticky;
+  z-index: 1000;
+}
+
+.nav-links {
+  flex: 1;
+  display: flex;
+  justify-content: left;
+  gap: 3rem;
+  list-style: none;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  position: relative;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  padding: 0.4rem 0.6rem;
+  text-decoration: none;
+  border-radius: 5px;
+  color: var(--nav-link-text);
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Main Dashboard Container */
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* Column Layout */
+.col1, .col2, .col3, .col4 {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 22%;
+}
+
+/* Chart Card */
+.chart-container {
+  width: 100%;
+  background: #1e2a38;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+canvas {
+  max-width: 100%;
+}
+
+h2 {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 0.2rem;
+}
+
+/* Responsive Layout */
+@media (max-width: 1200px) {
+  .col1, .col2, .col3, .col4 {
+    width: 45%;
+  }
+}
+
+@media (max-width: 700px) {
+  .col1, .col2, .col3, .col4 {
+    width: 100%;
+  }
+}
