@@ -1,12 +1,31 @@
 // Shared Color Palette
 const colorPalette = ['#2c3e50', '#4a6fa5', '#a8c0d6', '#dce3ec'];
 
+const hamburger = document.getElementById('hamburgerBtn');
+const sidebar = document.getElementById('sidebar');
+const body = document.body;
+
+hamburger.addEventListener('click', () => {
+  sidebar.classList.toggle('active');
+  body.classList.toggle('sidebar-open');
+});
+
+// Optional: Close sidebar on link click
+document.querySelectorAll('.sidebar .nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    sidebar.classList.remove('active');
+    body.classList.remove('sidebar-open');
+  });
+});
+
 // Chart Global Defaults
 Chart.defaults.font.family = 'Segoe UI, Roboto, sans-serif';
 Chart.defaults.font.size = 12;
 Chart.defaults.plugins.tooltip.cornerRadius = 6;
 Chart.defaults.plugins.tooltip.padding = 12;
 Chart.defaults.plugins.tooltip.displayColors = false;
+
+
 
 // 3D Shadow Plugin Simulation with Sleek Effects
 const barOptions = {
@@ -55,9 +74,9 @@ const barOptions = {
   },
   elements: {
     bar: {
-      borderRadius: 0,        // Remove rounded ends
-      borderSkipped: 'bottom', // Default style
-      borderWidth: 0           // No thick outlines
+      borderRadius: 0,        
+      borderSkipped: 'bottom',
+      borderWidth: 0         
     }
   },
   hover: {
@@ -262,10 +281,26 @@ const briefingDoneOptions = {
   }
 };
 
+const securityBriefingPendingOptions = {
+  ...barOptions,
+  scales: {
+    ...barOptions.scales,
+    y: {
+      ...barOptions.scales.y,
+      min: 0,
+      max: 3000,
+      ticks: {
+        ...barOptions.scales.y.ticks,
+        stepSize: 1000,
+        callback: formatTicks
+      }
+    }
+  }
+};
 
 // Chart 1: Installation Chart
 new Chart(document.getElementById('installationChart').getContext('2d'), {
-  type: 'bar',
+  type: 'pie',
   data: {
     labels: ['Today', 'MTD', 'YTD'],
     datasets: [{
@@ -273,7 +308,7 @@ new Chart(document.getElementById('installationChart').getContext('2d'), {
       data: [0, 1114, 18417],
       backgroundColor: colorPalette
     }]
-  }, 
+  },
   options: installationOptions
 });
 
@@ -292,7 +327,7 @@ new Chart(document.getElementById('removalPendingChart').getContext('2d'), {
 
 // Chart 3: Total Outbound Chart
 new Chart(document.getElementById('totalOutboundChart').getContext('2d'), {
-  type: 'bar',
+  type: 'pie',
   data: {
     labels: ['Today', 'MTD', 'YTD'],
     datasets: [{
@@ -301,7 +336,7 @@ new Chart(document.getElementById('totalOutboundChart').getContext('2d'), {
       backgroundColor: colorPalette
     }]
   },
-options: outboundOptions
+  options: outboundOptions
 });
 
 new Chart(document.getElementById('IOSChart').getContext('2d'), {
@@ -327,11 +362,11 @@ new Chart(document.getElementById('securityBreifingsChart').getContext('2d'), {
       backgroundColor: colorPalette[1]
     }]
   },
-  options: barOptions
+  options: securityBriefingPendingOptions
 });
 
 new Chart(document.getElementById('redoCompletedChart').getContext('2d'), {
-  type: 'bar',
+  type: 'pie',
   data: {
     labels: ['Today', 'MTD', 'YTD'],
     datasets: [{
@@ -344,7 +379,7 @@ new Chart(document.getElementById('redoCompletedChart').getContext('2d'), {
 });
 
 new Chart(document.getElementById('totalInboundChart').getContext('2d'), {
-  type: 'bar',
+  type: 'pie',
   data: {
     labels: ['Today', 'MTD', 'YTD'],
     datasets: [{
@@ -384,7 +419,7 @@ new Chart(document.getElementById('removalCompleteChart').getContext('2d'), {
 });
 
 new Chart(document.getElementById('NRChart').getContext('2d'), {
-  type: 'bar',
+  type: 'pie',
   data: {
     labels: ['NR Today'],
     datasets: [{
@@ -406,7 +441,7 @@ new Chart(document.getElementById('automaticOutboundChart').getContext('2d'), {
       backgroundColor: (ctx) => {
         const gradient = ctx.chart.ctx.createLinearGradient(0, 0, 0, 200);
         gradient.addColorStop(0, 'rgba(48, 113, 211, 0.4)');
-        gradient.addColorStop(1, 'rgba(33, 22, 94, 0)');
+        gradient.addColorStop(1, 'rgba(22, 41, 94, 0)');
         return gradient;
       }
     }]
@@ -415,7 +450,7 @@ new Chart(document.getElementById('automaticOutboundChart').getContext('2d'), {
 });
 
 new Chart(document.getElementById('securityChart').getContext('2d'), {
-  type: 'bar',
+  type: 'pie',
   data: {
     labels: ['Today', 'MTD', 'YTD'],
     datasets: [{
@@ -442,7 +477,7 @@ new Chart(document.getElementById('removalIntimationChart').getContext('2d'), {
 });
 
 new Chart(document.getElementById('redoPendingChart').getContext('2d'), {
-  type: 'bar',
+  type: 'pie',
   data: {
     labels: ['Today'],
     datasets: [{
@@ -474,7 +509,7 @@ new Chart(document.getElementById('mobileAppChart').getContext('2d'), {
 
 
 new Chart(document.getElementById('briefingDoneChart').getContext('2d'), {
-  type: 'bar', data: {
+  type: 'pie', data: {
     labels: ['Today', 'MTD', 'YTD'],
     datasets: [{
       label: 'Briefing Done',
