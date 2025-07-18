@@ -22,110 +22,136 @@
   <!-- Sidebar Navigation -->
   <aside class="sidebar" id="sidebar">
     <ul class="nav-links">
-      <li><a href="">Summary</a></li>
-      <li><a href="">Payment</a></li>
-      <li><a href="">Operation</a></li>
-      <li><a href="">Financial</a></li>
-      <li><a href="">IRS</a></li>
+      <li><a href="#" onclick="showPage('summaryPage')">Summary</a></li>
+      <li><a href="#" onclick="showPage('paymentPage')">Payment</a></li>
+      <li><a href="#" onclick="showPage('operationPage')">Operation</a></li>
+      <li><a href="#" onclick="showPage('financialPage')">Financial</a></li>
+      <li><a href="#" onclick="showPage('irsPage')">IRS</a></li>
     </ul>
   </aside>
 
-  <div class="main-container">
+  <section class="page" id="summaryPage">
 
-    <div class="col1">
-      <div class="chart-container">
-        <h2>Installation Requests</h2>
-        <canvas id="installationChart"></canvas>
+    <div class="main-container1">
+
+      <div class="col1">
+        <div class="chart-container">
+          <h2>Installation Requests</h2>
+          <canvas id="installationChart"></canvas>
+        </div>
+
+        <div class="chart-container">
+          <h2>Removal Pending</h2>
+          <canvas id="removalPendingChart"></canvas>
+        </div>
+
+        <div class="chart-container">
+          <h2>Total Outbound Calls</h2>
+          <canvas id="totalOutboundChart"></canvas>
+        </div>
+
+        <div class="chart-container">
+          <h2>IOS Users</h2>
+          <canvas id="IOSChart"></canvas>
+        </div>
+
       </div>
 
-      <div class="chart-container">
-        <h2>Removal Pending</h2>
-        <canvas id="removalPendingChart"></canvas>
+      <div class="col2">
+        <div class="chart-container">
+          <h2>Security Briefings Pending</h2>
+          <canvas id="securityBreifingsChart"></canvas>
+        </div>
+
+        <div class="chart-container">
+          <h2>Redo Completed</h2>
+          <canvas id="redoCompletedChart"></canvas>
+        </div>
+
+
+        <div class="chart-container">
+          <h2>Total Inbound Calls</h2>
+          <canvas id="totalInboundChart"></canvas>
+        </div>
+
+        <div class="chart-container">
+          <h2>Android Users</h2>
+          <canvas id="androidChart"></canvas>
+        </div>
       </div>
 
-      <div class="chart-container">
-        <h2>Total Outbound Calls</h2>
-        <canvas id="totalOutboundChart"></canvas>
+
+      <div class="col3">
+        <div class="chart-container">
+          <h2>Removal Completed</h2>
+          <canvas id="removalCompleteChart"></canvas>
+        </div>
+
+        <div class="chart-container">
+          <h2>NR Today</h2>
+          <canvas id="NRChart"></canvas>
+        </div>
+
+
+        <div class="chart-container">
+          <h2>Automatic Outbound Calls</h2>
+          <canvas id="automaticOutboundChart"></canvas>
+        </div>
+
+        <div class="chart-container">
+          <h2>Self Security Briefing SMS Sent</h2>
+          <canvas id="securityChart"></canvas>
+        </div>
       </div>
 
-      <div class="chart-container">
-        <h2>IOS Users</h2>
-        <canvas id="IOSChart"></canvas>
-      </div>
 
+      <div class="col4">
+        <div class="chart-container">
+          <h2>Removal Intimation</h2>
+          <canvas id="removalIntimationChart"></canvas>
+        </div>
+
+        <div class="chart-container">
+          <h2>Redo Pending</h2>
+          <canvas id="redoPendingChart"></canvas>
+        </div>
+
+
+        <div class="chart-container">
+          <h2>Mobile Application Calls</h2>
+          <canvas id="mobileAppChart"></canvas>
+        </div>
+
+        <div class="chart-container">
+          <h2>Self Security Briefing Done</h2>
+          <canvas id="briefingDoneChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page" id="paymentPage">
+    <h2>Payment page</h2>
+  </section>
+
+  <section class="page" id="operationPage">
+    <h2>Operation Page</h2>
+  </section>
+
+  <section class="page" id="financialPage">
+  <div class="main-container2">
+    <div class="financial-headings">
+      <h2>Fleet Fresh Outstanding</h2>
+      <p>Total Summary of Fleet Fresh Outstanding</p>
     </div>
 
-    <div class="col2">
-      <div class="chart-container">
-        <h2>Security Briefings Pending</h2>
-        <canvas id="securityBreifingsChart"></canvas>
-      </div>
-
-      <div class="chart-container">
-        <h2>Redo Completed</h2>
-        <canvas id="redoCompletedChart"></canvas>
-      </div>
-
-
-      <div class="chart-container">
-        <h2>Total Inbound Calls</h2>
-        <canvas id="totalInboundChart"></canvas>
-      </div>
-
-      <div class="chart-container">
-        <h2>Android Users</h2>
-        <canvas id="androidChart"></canvas>
-      </div>
-    </div>
-
-
-    <div class="col3">
-      <div class="chart-container">
-        <h2>Removal Completed</h2>
-        <canvas id="removalCompleteChart"></canvas>
-      </div>
-
-      <div class="chart-container">
-        <h2>NR Today</h2>
-        <canvas id="NRChart"></canvas>
-      </div>
-
-
-      <div class="chart-container">
-        <h2>Automatic Outbound Calls</h2>
-        <canvas id="automaticOutboundChart"></canvas>
-      </div>
-
-      <div class="chart-container">
-        <h2>Self Security Briefing SMS Sent</h2>
-        <canvas id="securityChart"></canvas>
-      </div>
-    </div>
-
-
-    <div class="col4">
-      <div class="chart-container">
-        <h2>Removal Intimation</h2>
-        <canvas id="removalIntimationChart"></canvas>
-      </div>
-
-      <div class="chart-container">
-        <h2>Redo Pending</h2>
-        <canvas id="redoPendingChart"></canvas>
-      </div>
-
-
-      <div class="chart-container">
-        <h2>Mobile Application Calls</h2>
-        <canvas id="mobileAppChart"></canvas>
-      </div>
-
-      <div class="chart-container">
-        <h2>Self Security Briefing Done</h2>
-        <canvas id="briefingDoneChart"></canvas>
-      </div>
-    </div>
+    <canvas id="outstandingChart"></canvas>
   </div>
+</section>
+
+  <section class="page" id="irsPage">
+    <h2>IRS Page</h2>
+  </section>
 
   <script src="data.js"></script>
 </body>
